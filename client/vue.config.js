@@ -1,12 +1,16 @@
-// TODO 修改配置
-/*module.exports = {
-  configureWebpack: config => { // webpack配置，值位对象时会合并配置，为方法时会改写配置
+module.exports = {
   devServer: {
-    open: true,
-    // http: false,
+    host: '127.0.0.1',
+    port: 8080,
+    https: false,
     hotOnly: false,
-    proxy: 'http://172.30.95.247:8080/onlinevps',
+    // eslint-disable-next-line no-dupe-keys
+    open: true,
+    proxy: {
+      '/': {
+        target: 'http://172.30.106.203:8080/onlinevps/',
+        changeOrigin: true
+      }
+    }
   }
 }
-}
-*/

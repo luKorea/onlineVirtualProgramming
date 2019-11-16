@@ -1,11 +1,10 @@
 ﻿<template>
   <div class="header-wrapper">
-        <router-link to="/main">首页</router-link>
+        <router-link to="/">首页</router-link>
         <router-link to="/htmldoc">HTML文档</router-link>
         <router-link to="/cssdoc">CSS文档</router-link>
         <router-link to="/jsdoc">JavaScript文档</router-link>
         <router-link to="/editor">在线编辑</router-link>
-        <router-link to="/example">在线测试</router-link>
   </div>
 </template>
 
@@ -17,6 +16,9 @@ export default {
 
 <style scoped lang="less">
   .header-wrapper {
+    position: fixed;
+    left: 0;
+    top: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-around;

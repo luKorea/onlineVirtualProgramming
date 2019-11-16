@@ -78,7 +78,7 @@ export default {
     height: 94%;
       .btn {
         width: 100%;
-        margin: 10px;
+        margin: 70px 0 10px;
       }
     .edit-area {
       width: 100%;

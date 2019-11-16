@@ -1,26 +1,19 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Main from '@/views/Main'
+import editor from '@/views/Editor'
+import jsDoc from '@/views/JSDoc'
+import htmlDoc from '@/views/HTMLDoc'
+import cssDoc from '@/views/CSSDoc'
 
 Vue.use(Router)
 
-const editor = () => import('@/views/Editor')
-const jsDoc = () => import('@/views/JSDoc')
-const htmlDoc = () => import('@/views/HTMLDoc')
-const cssDoc = () => import('@/views/CSSDoc')
-const example = () => import('@/views/Example')
 
 const router = new Router({
   routes: [
     {
       path: '/',
       component: Main
-    },
-    {
-      path: '/main',
-      name: 'main',
-      component: Main,
-      meta: { title: '首页' }
     },
     {
       path: '/editor',
@@ -45,19 +38,8 @@ const router = new Router({
       name: 'cssdoc',
       component: cssDoc,
       meta: { title: 'css文档' }
-    },
-    {
-      path: '/example',
-      name: 'example',
-      component: example,
-      meta: { title: '在线测试' }
     }
   ]
-})
-
-router.beforeEach((to, from, next) => {
-  document.title = to.matched[0].meta.title
-  next()
 })
 
 export default router

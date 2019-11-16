@@ -1,12 +1,16 @@
 <template>
-  <div>
-  </div>
+    <card :title='title' :list='list'></card>
 </template>
 
 <script>
+import Card from '@/components/Card'
+import { getCssList } from '@/api'
 
 export default {
-  name: 'CSSDoc',
+  name: 'CssDoc',
+  components: {
+    Card
+  },
   data () {
     return {
       title: 'CSS文档',
@@ -14,23 +18,16 @@ export default {
     }
   },
   mounted () {
-    this.getList()
+    this.getCss()
   },
   methods: {
-    getList () {
-      this.axios.get('/css/findAll')
-        .then(res => {
-          if (res.data.code === 0) {
-            this.list = res.data.data || ''
-          }
-        }).catch(err => {
-          console.log(err)
-        })
+    async getCss() {
+      let data = await getCssList()
+      this.list = data.data || ''
     }
   }
 }
 </script>
 
 <style scoped lang="less">
-
 </style>

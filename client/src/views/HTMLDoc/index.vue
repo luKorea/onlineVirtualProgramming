@@ -1,33 +1,28 @@
 <template>
-  <div>
-  </div>
+    <card :title='title' :list='list'></card>
 </template>
 
 <script>
-import { message } from 'ant-design-vue'
+import Card from '@/components/Card'
+import { getHtmlList } from '@/api'
+
 export default {
   name: 'HTMLDoc',
+  components: {
+    Card
+  },
   data () {
     return {
       list: []
     }
   },
-  mounted () {
-    this.getList()
+  async mounted () {
+    this.getHtml()
   },
   methods: {
-    getList () {
-      this.axios.get('/html/findAll')
-        .then(res => {
-          if (res.data.code === 0) {
-            this.list = res.data.data
-            console.log(this.list)
-          } else {
-            message.warn('获取数据失败')
-          }
-        }).catch(err => {
-          console.log(err)
-        })
+    async getHtml() {
+      let data = await getHtmlList()
+      this.list = data.data || ''
     }
   }
 }
