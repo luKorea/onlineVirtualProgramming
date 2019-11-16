@@ -32,4 +32,6 @@ export default {
 <style lang="stylus">
   #app
     font-size 24px
+    min-width 1400px
+    overflow hidden
 </style>

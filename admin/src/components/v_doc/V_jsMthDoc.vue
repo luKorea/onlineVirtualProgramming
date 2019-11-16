@@ -19,10 +19,10 @@ export default {
     return {
       tableData: [],
       allTableData: [],
-      options: 'js',
+      options: 'js/mth',
       label: {
         id: 'ID',
-        name: 'JavaScript标签名称',
+        name: 'JavaScript方法',
         desc: '描述',
         cases: '案例'
       },
@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     getFormDate () {
-      this.$axios.get('/html/findAll')
+      this.$axios.get('/js/mth/findAll')
         .then(res => {
           const data = res.data
           if (data.code === 0) {

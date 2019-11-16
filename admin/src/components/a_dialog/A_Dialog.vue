@@ -65,7 +65,7 @@ export default {
     onSubmit (value) {
       const url = this.options
       const id = value.id
-      console.log(value)
+      console.log(url)
       switch (url) {
         case 'html':
           this.updateData(url, id, value)
@@ -74,9 +74,15 @@ export default {
         case 'css':
           this.updateData(url, id, value)
           break
-        case 'js':
+        case 'js/mth':
           this.updateData(url, id, value)
           break
+        case 'js/obj':
+          this.updateData(url, id, value)
+          break  
+        case 'js/pro':
+          this.updateData(url, id, value)
+          break  
         default:
           break
       }

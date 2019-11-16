@@ -3,41 +3,24 @@
     <el-table
       :data="tableData"
       style="width: 100%">
-      <el-table-column type="expand">
-        <template slot-scope="props">
-          <el-form label-position="left" inline class="demo-table-expand">
-            <el-form-item label="标签ID">
-              <span>{{ props.row.id }}</span>
-            </el-form-item>
-            <br>
-            <el-form-item label="标签名称">
-              <span>{{ props.row.name }}</span>
-            </el-form-item>
-            <br>
-            <el-form-item label="标签描述">
-              <span>{{ props.row.desc }}</span>
-            </el-form-item>
-            <br>
-            <el-form-item label="案例">
-              <span>{{ props.row.example }}</span>
-            </el-form-item>
-          </el-form>
-        </template>
-      </el-table-column>
       <el-table-column
         :label="label.id"
+        align='center'
         prop="id">
       </el-table-column>
       <el-table-column
         :label="label.name"
+        align='center'
         prop="name">
       </el-table-column>
       <el-table-column
         :label="label.desc"
+        align='center'
         prop="desc">
       </el-table-column>
       <el-table-column
         :label="label.cases"
+        align='center'
         prop="example">
       </el-table-column>
       <el-table-column label="操作">
@@ -126,9 +109,15 @@ export default {
         case 'css':
           this.deleteData(url, row)
           break
-        case 'js':
+        case 'js/mth':
           this.deleteData(url, row)
           break
+        case 'js/obj':
+          this.deleteData(url, row)
+          break 
+        case 'js/pro':
+          this.deleteData(url, row)
+          break   
         default:
           break
       }
@@ -151,5 +140,10 @@ export default {
   }
   .el-table .cell {
     width: 425px !important;
+  }
+  .example {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 </style>

@@ -52,18 +52,24 @@ export default {
         },
         {
           icon: 'el-icon-edit-outline',
-          index: 'v_js',
-          title: 'JS模块'
-        },
-        {
-          icon: 'el-icon-edit-outline',
-          index: 'v_examination',
-          title: '题目模块'
-        },
-        {
-          icon: 'el-icon-edit-outline',
-          index: 'v_examname',
-          title: '试卷模块'
+          index: '4',
+          title: 'JS模块',
+          subs: [
+            {
+              icon: 'el-icon-tickets',
+              index: 'v_jsmth',
+              title: '方法'
+            },
+            {
+              icon: 'el-icon-tickets',
+              index: 'v_jsobj',
+              title: '接口'
+            },
+            {
+              icon: 'el-icon-tickets',
+              index: 'v_jspro',
+              title: '属性'
+            }]
         },
         {
           icon: 'el-icon-document',
@@ -82,18 +88,18 @@ export default {
             },
             {
               icon: 'el-icon-tickets',
-              index: 'v_jsdoc',
-              title: 'JS文档'
+              index: 'v_jsmthdoc',
+              title: 'JS方法文档'
             },
             {
               icon: 'el-icon-tickets',
-              index: 'v_exampledoc',
-              title: '题目'
+              index: 'v_jsobjdoc',
+              title: 'JS接口文档'
             },
             {
               icon: 'el-icon-tickets',
-              index: 'v_examnamedoc',
-              title: '试卷'
+              index: 'v_jsprodoc',
+              title: 'JS属性文档'
             }
           ]
         }
