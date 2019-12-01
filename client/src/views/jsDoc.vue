@@ -27,22 +27,22 @@ export default {
       listPro: []
     }
   },
-  mounted () {
+  create () {
     this.getMth()
     this.getObj()
     this.getPro()
   },
   methods: {
-    async getMth() {
-      let mthData  = await getJsMth()
+    async getMth () {
+      let mthData = await getJsMth()
       this.listMth = mthData.data || ''
     },
-    async getObj() {
-      let objData  = await getJsObj()
+    async getObj () {
+      let objData = await getJsObj()
       this.listObj = objData.data || ''
     },
-    async getPro() {
-      let proData  = await getJsPro()
+    async getPro () {
+      let proData = await getJsPro()
       this.listPro = proData.data || ''
     }
   }
