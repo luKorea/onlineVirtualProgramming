@@ -12,8 +12,8 @@
 
 <script>
 import ace from 'ace-builds'
+import 'ace-builds/src-noconflict/ext-language_tools'
 import 'ace-builds/webpack-resolver'
-
 import { message } from 'ant-design-vue'
 
 export default {
@@ -54,6 +54,11 @@ export default {
       enableSnippets: true,
       enableLiveAutocompletion: true
     })
+  },
+  watch: {
+    '$route' (to, from) {
+      this.editor.setValue(to.query.example)
+    }
   }
 }
 </script>

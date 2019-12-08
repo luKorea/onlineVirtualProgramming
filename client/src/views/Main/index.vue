@@ -12,6 +12,6 @@ export default {
 
 <style scoped lang="less">
   .logo {
-    background-image: url(../assets/images/bg.png);
+    background-image: url(../../assets/images/bg.png);
   }
 </style>

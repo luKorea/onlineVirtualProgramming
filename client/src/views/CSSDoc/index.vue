@@ -4,24 +4,25 @@
 
 <script>
 import Card from '@/components/Card'
-import { getHtmlList } from '@/api'
+import { getCssList } from '@/api'
 
 export default {
-  name: 'HTMLDoc',
+  name: 'CssDoc',
   components: {
     Card
   },
   data () {
     return {
+      title: 'CSS文档',
       list: []
     }
   },
-  created () {
-    this.getHtml()
+  mounted () {
+    this.getCss()
   },
   methods: {
-    async getHtml () {
-      let data = await getHtmlList()
+    async getCss() {
+      let data = await getCssList()
       this.list = data.data || ''
     }
   }

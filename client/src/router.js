@@ -1,16 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Main from '@/views/Main'
+import editor from '@/views/Editor'
+import jsDoc from '@/views/JSDoc'
+import htmlDoc from '@/views/HTMLDoc'
+import cssDoc from '@/views/CSSDoc'
+
 Vue.use(Router)
 
-const Main = () => import('@/views/main')
-const editor = () => import('@/views/editor')
-const jsDoc = () => import('@/views/jsDoc')
-const htmlDoc = () => import('@/views/htmlDoc')
-const cssDoc = () => import('@/views/cssDoc')
-
 const router = new Router({
-  mode: 'hash',
-  base: process.env.BASE_URL,
   routes: [
     {
       path: '/',

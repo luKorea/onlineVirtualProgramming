@@ -5,7 +5,7 @@
     <div v-for="item in list" :key="item.id" class="card-main">
         <h3 class="card-main">{{item.desc}} / {{item.name}}</h3>
       <pre class="example"><span style="font-size: 20px;color: #ff697b">实例</span><br>{{item.example}}</pre>
-      <button @click="handleEditor" class="editor-btn">尝试一下</button>
+      <button @click="handleEditor(item.example)" class="editor-btn">尝试一下</button>
       <hr>
     </div>
   </div>
@@ -25,8 +25,11 @@ export default {
     }
   },
   methods: {
-    handleEditor () {
-      this.$router.push('/editor')
+    handleEditor (value) {
+      this.$router.push({
+        path: '/editor',
+        query: { example: value }
+      })
     }
   }
 }
